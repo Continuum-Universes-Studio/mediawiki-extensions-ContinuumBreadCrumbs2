@@ -1,0 +1,44 @@
+{
+	"name": "ContinuumBreadCrumbs2",
+	"version": "3.0.0",
+	"author": [
+		"Eric Hartwell",
+		"Ike Hecht",
+		"[https://www.archixl.nl Youri van den Bogert]",
+		"Christian Daniel Jensen",
+		"Continuum Universes Studio"
+	],
+	"url": "https://www.continuum-universes-wiki.com/Extension:ContinuumBreadCrumbs2",
+	"descriptionmsg": "continuum-breadcrumbs2-desc",
+	"license-name": "CC-BY-3.0",
+	"type": "other",
+	"requires": {
+		"MediaWiki": ">= 1.45.0"
+	},
+	"MessagesDirs": {
+		"ContinuumBreadCrumbs2": [
+			"i18n"
+		]
+	},
+	"AutoloadClasses": {
+		"BreadCrumbs2": "includes/BreadCrumbs2.class.php",
+		"Hooks": "includes/Hooks.php",
+		"BreadCrumbs2Cache": "includes/BreadCrumbs2.cache.php"
+	},
+	"Hooks": {
+		"SkinSubPageSubtitle": "ContinuumUniverses\\BreadCrumbs2\\Hooks::onSkinSubPageSubtitle",
+		"SidebarBeforeOutput": "ContinuumUniverses\\BreadCrumbs2\\Hooks::onSidebarBeforeOutput",
+		"PageSaveComplete": "ContinuumUniverses\\BreadCrumbs2\\Hooks::onPageSaveComplete"
+	},
+	"config": {
+		"BreadCrumbs2RemoveBasePageLink": {
+			"description": "If breadcrumbs are defined for this page, remove the link back to the base page.",
+			"value": false
+		},
+		"BreadCrumbs2HideUnmatched": {
+			"description": "If no breadcrumbs are defined for this page, show nothing.",
+			"value": false
+		}
+	},
+	"manifest_version": 2
+}
